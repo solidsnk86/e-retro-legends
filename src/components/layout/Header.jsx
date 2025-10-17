@@ -75,9 +75,14 @@ const Header = ({ isAuthenticated, userRole, onLogout }) => {
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <h1 className="text-3xl font-bold text-red-500 tracking-tight">
-            e-<span className="text-blue-500">Retro</span>{" "}
-            <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-extrabold tracking-tight flex items-center">
+            <span className="text-red-500">e</span>
+            <span className="text-blue-500">-R</span>
+            <span className="text-yellow-400">e</span>
+            <span className="text-green-500">t</span>
+            <span className="text-purple-500">r</span>
+            <span className="text-orange-500">o</span>
+            <span className="ml-1 text-blue-400">
               Legends
             </span>
           </h1>
