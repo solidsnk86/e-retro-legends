@@ -53,17 +53,19 @@ const Header = ({ isAuthenticated, userRole, onLogout }) => {
                 </button>
               </>
             ) : (
-              <>
+              <p className="flex items-center gap-2">
+                ¡Hola!
                 <Link to="/login" className="hover:text-blue-600">
-                  Iniciar sesión
+                  Inicia sesión
                 </Link>
+                o
                 <Link
                   to="/register"
                   className="text-blue-600 font-semibold hover:underline"
                 >
                   Registrarse
                 </Link>
-              </>
+              </p>
             )}
           </div>
         </div>
@@ -73,9 +75,11 @@ const Header = ({ isAuthenticated, userRole, onLogout }) => {
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <h1 className="text-3xl font-bold text-blue-700 tracking-tight">
-            e-<span className="text-yellow-500">Retro</span>{" "}
-            <span className="text-gray-800">Legends</span>
+          <h1 className="text-3xl font-bold text-red-500 tracking-tight">
+            e-<span className="text-blue-500">Retro</span>{" "}
+            <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+              Legends
+            </span>
           </h1>
         </Link>
 
@@ -102,7 +106,22 @@ const Header = ({ isAuthenticated, userRole, onLogout }) => {
           className="flex items-center gap-2 border border-gray-300 rounded-md px-3 py-2 hover:bg-gray-50 transition"
         >
           <span className="text-2xl">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+            >
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
           </span>
           <div className="text-left">
             <p className="text-xs text-gray-500">Carrito</p>
