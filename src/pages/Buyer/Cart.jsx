@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../../contexts/CartContext';
-import Button from '../../components/common/Button';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
+import Button from "../../components/common/Button";
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
@@ -9,7 +9,7 @@ const Cart = () => {
 
   const handleCheckout = () => {
     if (cartItems.length > 0) {
-      navigate('/checkout');
+      navigate("/checkout");
     }
   };
 
@@ -18,12 +18,30 @@ const Cart = () => {
       <div className="min-h-screen bg-gray-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-white border-2 border-gray-400 p-12 text-center">
-            <div className="text-6xl mb-4">🛒</div>
+            <div className="text-6xl mb-4 flex justify-center items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="33"
+                height="33"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg>
+            </div>
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Tu carrito está vacío
             </h2>
             <p className="text-gray-600 mb-6">
-              ¡Explora nuestros productos deportivos retro y encuentra tus favoritos!
+              ¡Explora nuestros productos deportivos retro y encuentra tus
+              favoritos!
             </p>
             <Link to="/">
               <Button variant="primary" size="large">
@@ -39,7 +57,9 @@ const Cart = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-3xl font-bold text-blue-900 mb-6">Carrito de Compras</h1>
+        <h1 className="text-3xl font-bold text-blue-900 mb-6">
+          Carrito de Compras
+        </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Cart Items */}
@@ -73,12 +93,14 @@ const Cart = () => {
                         {item.name}
                       </Link>
                       <p className="text-sm text-gray-600 mb-2">
-                        Condición: {item.condition || 'N/A'}
+                        Condición: {item.condition || "N/A"}
                       </p>
                       <div className="flex items-center gap-4">
                         <div className="flex items-center border-2 border-gray-400">
                           <button
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity - 1)
+                            }
                             className="px-3 py-1 hover:bg-gray-200 font-bold"
                           >
                             -
@@ -87,7 +109,9 @@ const Cart = () => {
                             {item.quantity}
                           </span>
                           <button
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() =>
+                              updateQuantity(item.id, item.quantity + 1)
+                            }
                             className="px-3 py-1 hover:bg-gray-200 font-bold"
                           >
                             +
@@ -127,7 +151,9 @@ const Cart = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Subtotal:</span>
-                  <span className="font-bold">${getCartTotal().toFixed(2)}</span>
+                  <span className="font-bold">
+                    ${getCartTotal().toFixed(2)}
+                  </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Envío:</span>
@@ -180,4 +206,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
