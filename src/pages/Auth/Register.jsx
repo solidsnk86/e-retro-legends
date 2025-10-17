@@ -11,7 +11,7 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    role: 'buyer', // 'buyer' o 'seller'
+    role: 'buyer', // 'buyer' o 'seller' <- vendedor o comprador
     acceptTerms: false
   });
   const [errors, setErrors] = useState({});
@@ -76,9 +76,9 @@ const Register = () => {
       return;
     }
 
-    // Simulación de registro - en producción esto haría una llamada al backend
+    // Acá iría la famosa llamada al backend
     const userData = {
-      id: Date.now(), // ID temporal
+      id: Date.now(), // ID temporal <- en la DB de postgres es un serial o quizas lo cambie a uuid
       email: formData.email,
       name: `${formData.firstName} ${formData.lastName}`,
       role: formData.role
@@ -100,14 +100,14 @@ const Register = () => {
             </p>
           </div>
 
-          {/* Form */}
+          {/* Formulario */}
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <Input
                 type="text"
                 name="firstName"
                 label="Nombre"
-                placeholder="Juan"
+                placeholder="Jhon"
                 value={formData.firstName}
                 onChange={handleChange}
                 error={errors.firstName}
@@ -118,7 +118,7 @@ const Register = () => {
                 type="text"
                 name="lastName"
                 label="Apellido"
-                placeholder="Pérez"
+                placeholder="Rambo"
                 value={formData.lastName}
                 onChange={handleChange}
                 error={errors.lastName}
@@ -159,7 +159,7 @@ const Register = () => {
               required
             />
 
-            {/* Role Selection */}
+            {/* Tipo de cuenta */}
             <div className="mb-4">
               <label className="block text-sm font-bold mb-2 text-gray-700">
                 Tipo de cuenta <span className="text-red-600">*</span>
@@ -190,9 +190,9 @@ const Register = () => {
               </div>
             </div>
 
-            {/* Terms */}
+            {/* Términos y condiciones */}
             <div className="mb-6">
-              <label className="flex items-start">
+              <label className="flex justify-center items-center">
                 <input
                   type="checkbox"
                   name="acceptTerms"
@@ -200,7 +200,7 @@ const Register = () => {
                   onChange={handleChange}
                   className="mr-2 mt-1"
                 />
-                <span className="text-xs text-gray-700">
+                <span className="text-xs text-gray-700 mt-1.5">
                   Acepto los{' '}
                   <Link to="/terms" className="text-blue-600 hover:underline">
                     términos y condiciones

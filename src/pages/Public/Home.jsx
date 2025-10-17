@@ -24,7 +24,7 @@ const Home = () => {
     {
       id: 3,
       name: "Raqueta Wilson Pro Staff 85 - Edición Sampras",
-      price: 41909.99,
+      price: 410909.99,
       image: null,
       shipping: 15.0,
       condition: "Nuevo",
