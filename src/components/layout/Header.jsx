@@ -55,7 +55,7 @@ const Header = ({ isAuthenticated, userRole, onLogout }) => {
             ) : (
               <p className="flex items-center gap-2">
                 ¡Hola!
-                <Link to="/login" className="hover:text-blue-600">
+                <Link to="/login" className="text-blue-600 underline">
                   Inicia sesión
                 </Link>
                 o
